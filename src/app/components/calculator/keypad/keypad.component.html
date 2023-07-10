@@ -1,0 +1,45 @@
+<div class="keypad-component p-[40px] bg-light-keypad-bg-color-0">
+  <div class="grid grid-cols-4 gap-4">
+    <!-- 1st Column -->
+
+    <div class="col-span-3 gap-4">
+      <div class="grid grid-cols-1 mb-4">
+        <div class=" rounded-full flex justify-between items-center bg-[#ffffff4d] h-[70px] px-2 ">
+          <div class="text-[26px] text-[#373737]">AC</div>
+          <div class="text-[26px] text-[#373737]">+/-</div>
+          <div class="text-[26px] text-[#373737]">%</div>
+        </div>
+      </div>
+      <!-- Key Buttons -->
+      <div class="grid grid-cols-3 gap-4">
+        <app-key [key]="1"></app-key>
+        <app-key [key]="2"></app-key>
+        <app-key [key]="3"></app-key>
+        <app-key [key]="4"></app-key>
+        <app-key [key]="5"></app-key>
+        <app-key [key]="6"></app-key>
+        <app-key [key]="7"></app-key>
+        <app-key [key]="8"></app-key>
+        <app-key [key]="9"></app-key>
+        <app-key [key]="'.'"></app-key>
+        <app-key [key]="0"></app-key>
+        <app-key [key]="'00'"></app-key>
+        <!-- Add more key buttons as needed -->
+      </div>
+    </div>
+
+    <!-- 2nd Column -->
+    <div class="col-span-1">
+      <!-- Operator Buttons -->
+      <div class="grid grid-rows-4 gap-4">
+        <app-key [key]="'%'" ></app-key>
+        <app-key [key]="'x'" ></app-key>
+        <app-key [key]="'-'" ></app-key>
+        <app-key [key]="'+'" ></app-key>
+        <app-key [key]="'='" ></app-key>
+
+        <!-- Add more operator buttons as needed -->
+      </div>
+    </div>
+  </div>
+</div>

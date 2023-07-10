@@ -1,0 +1,163 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;600;700;800;900&display=swap');
+// toggle-button
+:root{
+  --main-bg :linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(221,219,219,1) 50%);
+  --secondary-bg :linear-gradient(326deg, rgba(138,212,254,1) 60%, rgba(234,234,234,1) 100%);
+  --transparent-bg :rgba(255, 255, 255, 0.5);
+  --text-color : black;
+  --img-filter: none;
+  //display
+  $light-display-bg-theme:linear-gradient(#FEFEFE, #F9F9F9, #F3F3F3, #E5E5E5) !default;
+  $dark-display-bg-theme:linear-gradient(#373737, #252628, #000309) !default;
+
+  //keypad
+  $light-keypad-bg-theme:rgba(230, 246, 255, 0.2) !default;
+  $light-keypad-color:rgba(255, 255, 255, 0.3) !default;
+  $dark-keypad-bg-theme:rgba(0, 34, 53, 0.4) !default;
+  $dark-keypad-color:rgba(5, 5, 5, 0.3) !default;
+
+  //border-radius
+  $border-radius:40px !default;
+
+}
+
+[data-theme="dark"]{
+  --main-bg : linear-gradient(180deg, rgb(22, 26, 40) 10%, rgb(0, 0, 0) 90%);
+  --secondary-bg: linear-gradient(55deg, rgb(10, 29, 48) 0%, rgb(21, 64, 86) 100%);
+  --transparent-bg :rgba(0, 0, 0, 0.255);
+  --text-color : white;
+  --img-filter: brightness(5);
+}
+/* You can add global styles to this file, and also import other style files */
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #FEFEFE 0%, #F9F9F9 12.84%, #F3F3F3 32.53%, #E5E5E5 100%);
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}

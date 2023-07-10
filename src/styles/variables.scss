@@ -1,0 +1,17 @@
+// toggle-button
+$light-toggle-bg:#A9DCFD !default;
+$light-active-toggle:#D8EEFF !default;
+$dark-toggle-bg:#1B6A9C !default;
+$dark-active-toggle:#003661 !default;
+//display
+$light-display-bg-theme:linear-gradient(#FEFEFE, #F9F9F9, #F3F3F3, #E5E5E5) !default;
+$dark-display-bg-theme:linear-gradient(#373737, #252628, #000309) !default;
+
+//keypad
+$light-keypad-bg-theme:rgba(230, 246, 255, 0.2) !default;
+$light-keypad-color:rgba(255, 255, 255, 0.3) !default;
+$dark-keypad-bg-theme:rgba(0, 34, 53, 0.4) !default;
+$dark-keypad-color:rgba(5, 5, 5, 0.3) !default;
+
+//border-radius
+$border-radius:40px !default;

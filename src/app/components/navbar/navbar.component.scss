@@ -1,0 +1,11 @@
+.navbar {
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .toggle-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
