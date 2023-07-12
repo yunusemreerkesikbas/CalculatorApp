@@ -1,6 +1,5 @@
 // key.component.ts
 import { Component, Input, OnInit } from '@angular/core';
-import { CalculateService } from '@services/calculate.service';
 
 @Component({
   selector: 'app-key',
