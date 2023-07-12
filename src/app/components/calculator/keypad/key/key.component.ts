@@ -1,5 +1,5 @@
 // key.component.ts
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CalculateService } from '@services/calculate.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { CalculateService } from '@services/calculate.service';
 export class KeyComponent implements OnInit {
   @Input() key: string;
 
-  constructor(private calculateService: CalculateService) {}
+  constructor() {}
 
   ngOnInit(): void {}
 }
