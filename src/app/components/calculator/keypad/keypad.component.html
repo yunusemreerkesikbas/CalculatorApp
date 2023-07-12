@@ -1,29 +1,28 @@
-<div class="keypad-component p-[40px] bg-light-keypad-bg-color-0">
+<div class="keypad-component p-[40px] lg:p-3">
   <div class="grid grid-cols-4 gap-4">
     <!-- 1st Column -->
-
     <div class="col-span-3 gap-4">
       <div class="grid grid-cols-1 mb-4">
-        <div class=" rounded-full flex justify-between items-center bg-[#ffffff4d] h-[70px] px-2 ">
-          <div class="text-[26px] text-[#373737]">AC</div>
-          <div class="text-[26px] text-[#373737]">+/-</div>
-          <div class="text-[26px] text-[#373737]">%</div>
+        <div class=" rounded-full flex justify-between items-center bg-[#ffffff4d] dark:bg-[#0505054D]  h-[70px] lg:h-[40px] px-2 ">
+          <div class="text-[26px] text-[#373737] lg:text-[20px] dark:text-white" (click)="clearResult()">AC</div>
+          <div class="text-[26px] text-[#373737] lg:text-[20px] dark:text-white" (click)="addToOperation('+/-')">+/-</div>
+          <div class="text-[26px] text-[#373737] lg:text-[20px] dark:text-white" (click)="addToOperation('%')">%</div>
         </div>
       </div>
       <!-- Key Buttons -->
       <div class="grid grid-cols-3 gap-4">
-        <app-key [key]="1"></app-key>
-        <app-key [key]="2"></app-key>
-        <app-key [key]="3"></app-key>
-        <app-key [key]="4"></app-key>
-        <app-key [key]="5"></app-key>
-        <app-key [key]="6"></app-key>
-        <app-key [key]="7"></app-key>
-        <app-key [key]="8"></app-key>
-        <app-key [key]="9"></app-key>
-        <app-key [key]="'.'"></app-key>
-        <app-key [key]="0"></app-key>
-        <app-key [key]="'00'"></app-key>
+        <app-key [key]="'1'" (click)="addToOperation('1')"></app-key>
+        <app-key [key]="'2'" (click)="addToOperation('2')"></app-key>
+        <app-key [key]="'3'" (click)="addToOperation('3')"></app-key>
+        <app-key [key]="'4'" (click)="addToOperation('4')"></app-key>
+        <app-key [key]="'5'" (click)="addToOperation('5')"></app-key>
+        <app-key [key]="'6'" (click)="addToOperation('6')"></app-key>
+        <app-key [key]="'7'" (click)="addToOperation('7')"></app-key>
+        <app-key [key]="'8'" (click)="addToOperation('8')"></app-key>
+        <app-key [key]="'9'" (click)="addToOperation('9')"></app-key>
+        <app-key [key]="'0'" (click)="addToOperation('0')"></app-key>
+        <app-key [key]="'.'" (click)="addToOperation('.')"></app-key>
+        <app-key [key]="'00'" (click)="addToOperation('00')"></app-key>
         <!-- Add more key buttons as needed -->
       </div>
     </div>
@@ -32,12 +31,11 @@
     <div class="col-span-1">
       <!-- Operator Buttons -->
       <div class="grid grid-rows-4 gap-4">
-        <app-key [key]="'%'" ></app-key>
-        <app-key [key]="'x'" ></app-key>
-        <app-key [key]="'-'" ></app-key>
-        <app-key [key]="'+'" ></app-key>
-        <app-key [key]="'='" ></app-key>
-
+        <app-key [key]="'%'" (click)="addToOperation('%')"></app-key>
+        <app-key [key]="'x'" (click)="addToOperation('*')"></app-key>
+        <app-key [key]="'-'" (click)="addToOperation('-')"></app-key>
+        <app-key [key]="'+'" (click)="addToOperation('+')"></app-key>
+        <app-key [key]="'='" (click)="calculateResult()"></app-key>
         <!-- Add more operator buttons as needed -->
       </div>
     </div>

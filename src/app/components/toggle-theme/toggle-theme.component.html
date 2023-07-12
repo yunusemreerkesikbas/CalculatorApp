@@ -1,6 +1,6 @@
-<div class="toggle-button flex items-center cursor-pointer rounded-full bg-light-toggle-bg" (click)="toggleTheme()">
-  <div [ngClass]="{'toggle-dot-active': darkTheme}" class="toggle-dot flex justify-center items-center rounded-full bg-light-active-toggle">
-    <img *ngIf="!darkTheme" src="/assets/images/light.svg" alt="Light Theme Icon" >
-    <img *ngIf="darkTheme" src="/assets/images/dark.svg" alt="Dark Theme Icon">
+<div class="toggle-button flex items-center cursor-pointer rounded-full bg-light-toggle-bg dark:bg-dark-toggle-bg w-40 h-16 lg:w-[6rem] lg:h-12 transition-colors duration-300 ease-in-out" (click)="toggleTheme()">
+  <div [ngClass]="{'toggle-dot-active': darkTheme}" class="toggle-dot flex justify-center items-center rounded-full bg-light-active-toggle dark:bg-dark-active-toggle w-20 h-16 lg:w-12 lg:h-12 transform translate-x-1 lg:translate-x-2 transition-transform duration-300 ease-in-out">
+    <img *ngIf="!darkTheme" ngSrc="/assets/images/light.svg" alt="Light Theme Icon" height="12" width="12" class="w-6 h-6">
+    <img *ngIf="darkTheme" ngSrc="/assets/images/dark.svg" alt="Dark Theme Icon" height="12" width="12" class="w-6 h-6">
   </div>
 </div>

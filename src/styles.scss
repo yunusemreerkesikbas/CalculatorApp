@@ -2,36 +2,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer base {
+  :root {
+    --light-keypad: 230, 246, 255;
+    --dark-keypad: 0, 34, 53;
+  }
+}
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;600;700;800;900&display=swap');
 // toggle-button
-:root{
-  --main-bg :linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(221,219,219,1) 50%);
-  --secondary-bg :linear-gradient(326deg, rgba(138,212,254,1) 60%, rgba(234,234,234,1) 100%);
-  --transparent-bg :rgba(255, 255, 255, 0.5);
-  --text-color : black;
-  --img-filter: none;
-  //display
-  $light-display-bg-theme:linear-gradient(#FEFEFE, #F9F9F9, #F3F3F3, #E5E5E5) !default;
-  $dark-display-bg-theme:linear-gradient(#373737, #252628, #000309) !default;
-
-  //keypad
-  $light-keypad-bg-theme:rgba(230, 246, 255, 0.2) !default;
-  $light-keypad-color:rgba(255, 255, 255, 0.3) !default;
-  $dark-keypad-bg-theme:rgba(0, 34, 53, 0.4) !default;
-  $dark-keypad-color:rgba(5, 5, 5, 0.3) !default;
-
-  //border-radius
-  $border-radius:40px !default;
-
-}
-
-[data-theme="dark"]{
-  --main-bg : linear-gradient(180deg, rgb(22, 26, 40) 10%, rgb(0, 0, 0) 90%);
-  --secondary-bg: linear-gradient(55deg, rgb(10, 29, 48) 0%, rgb(21, 64, 86) 100%);
-  --transparent-bg :rgba(0, 0, 0, 0.255);
-  --text-color : white;
-  --img-filter: brightness(5);
-}
 /* You can add global styles to this file, and also import other style files */
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
@@ -141,7 +119,7 @@ section {
 body {
   line-height: 1;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #FEFEFE 0%, #F9F9F9 12.84%, #F3F3F3 32.53%, #E5E5E5 100%);
+  //background:  linear-gradient(135deg, #FEFEFE 0%, #F9F9F9 12.84%, #F3F3F3 32.53%, #E5E5E5 100%);
 }
 ol,
 ul {

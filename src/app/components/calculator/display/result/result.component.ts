@@ -1,15 +1,32 @@
+// result.component.ts
 import { Component, OnInit } from '@angular/core';
+import { CalculateService } from '@services/calculate.service';
 
 @Component({
   selector: 'app-result',
   templateUrl: './result.component.html',
-  styleUrls: ['./result.component.scss']
+  styleUrls: ['./result.component.scss'],
 })
 export class ResultComponent implements OnInit {
+  result: string;
+  operation: string;
 
-  constructor() { }
+  constructor(protected calculateService: CalculateService) {}
 
   ngOnInit(): void {
+    this.operation = this.calculateService.getOperation();
+    this.result = this.calculateService.getResult();
+
+    console.log('result', this.result);
+
+    this.calculateService.operationSubject.subscribe((operation) => {
+      this.operation = operation;
+    });
+    this.calculateService.resultSubject.subscribe((result) => {
+      this.result = result;
+      this.operation = this.result;
+    });
   }
 
+  protected readonly history = history;
 }

@@ -1,4 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+// key.component.ts
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { CalculateService } from '@services/calculate.service';
 
 @Component({
   selector: 'app-key',
@@ -6,9 +8,9 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./key.component.scss'],
 })
 export class KeyComponent implements OnInit {
-  @Input() key: any;
+  @Input() key: string;
 
-  constructor() {}
+  constructor(private calculateService: CalculateService) {}
 
   ngOnInit(): void {}
 }

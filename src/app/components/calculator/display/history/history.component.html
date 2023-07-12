@@ -1,0 +1,11 @@
+<div
+  class="result-component flex flex-col items-end font-normal border-b-1 border-solid border-black mb-5 gap-2 dark:text-white"
+  *ngIf="calculateService.history"
+>
+  <div *ngFor="let history of calculateService.historyOperations.slice(-3)">
+    <div class="result text-gray-700 text-xl opacity-50">
+      {{ history }}
+    </div>
+  </div>
+
+</div>
