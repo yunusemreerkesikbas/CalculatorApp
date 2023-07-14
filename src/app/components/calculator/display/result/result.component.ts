@@ -27,6 +27,4 @@ export class ResultComponent implements OnInit {
       this.operation = this.result;
     });
   }
-
-  protected readonly history = history;
 }

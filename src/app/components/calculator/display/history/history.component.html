@@ -3,7 +3,7 @@
   *ngIf="calculateService.history"
 >
   <div *ngFor="let history of calculateService.historyOperations.slice(-3)">
-    <div class="result text-gray-700 text-xl opacity-50">
+    <div class="result text-gray-700 text-xl opacity-50 dark:text-white">
       {{ history }}
     </div>
   </div>

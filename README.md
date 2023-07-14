@@ -1,27 +1,69 @@
-# CalculatorApp
+# Calculator App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.2.
+This project is an Angular v14 application developed using the Tailwind CSS framework. It features a calculator that supports basic arithmetic operations such as addition, subtraction, multiplication, and division. The calculator also includes a memory feature that stores the last three calculations and displays them in the history section.
+> **Note**
+>
+> This application is designed for mobile devices but includes responsive design.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Four basic arithmetic operations: addition, subtraction,multiplication, and division.
+- Memory function to store and display the last three calculations.
+- Responsive design suitable for both mobile and desktop devices.
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Clone the repository:
+```
+git clone https://github.com/your-username/calculator-app.git
+```
 
-## Build
+Navigate to the project directory:
+```
+cd calculator-app
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Install the dependencies:
 
-## Running unit tests
+```
+npm install
+```
+## Usage
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Start the development server:
 
-## Running end-to-end tests
+```
+ng serve
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Open your browser and navigate to http://localhost:4200 to access the calculator app.
 
-## Further help
+## How to Use
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Enter numbers and perform calculations using the buttons on the calculator interface. 
+- The result will be displayed in the calculator's output field.
+- The memory section will show the last three calculations performed.
+## Screenshots
+
+
+| Light Mode                                                 | Dark Mode                                                |
+|------------------------------------------------------------|----------------------------------------------------------|
+| ![Light Mode Screenshot](./src/assets/images/light-ss.png) | ![Dark Mode Screenshot](./src/assets/images/dark-ss.png) |
+
+
+## Contributing
+
+Contributions are welcome! If you find any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.
+License
+
+This project is licensed under the MIT License.
+
+## Credits
+
+The Calculator App is created and maintained by Yunus Emre Erkesikbaş.
+
+## Contact
+
+For any inquiries or questions, please contact erkesikbasyunusemre@gmail.com.
+
+Feel free to explore the project and enjoy using the Calculator App!

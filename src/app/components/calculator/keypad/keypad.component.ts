@@ -8,8 +8,6 @@ import { CalculateService } from '@services/calculate.service';
   styleUrls: ['./keypad.component.scss'],
 })
 export class KeypadComponent implements OnInit {
-  expression: string = '';
-  result: string = '';
   constructor(private calculateService: CalculateService) {}
 
   ngOnInit(): void {}
