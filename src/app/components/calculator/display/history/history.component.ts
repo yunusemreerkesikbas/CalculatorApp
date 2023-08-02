@@ -10,7 +10,6 @@ export class HistoryComponent implements OnInit {
   historyOperation: string[];
   constructor(protected calculateService: CalculateService) {
     this.historyOperation = this.calculateService.getHistoryOperation();
-    console.log('historyOperation', this.historyOperation);
   }
 
   ngOnInit(): void {}

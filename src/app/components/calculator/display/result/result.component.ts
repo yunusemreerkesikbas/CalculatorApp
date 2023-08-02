@@ -17,7 +17,6 @@ export class ResultComponent implements OnInit {
     this.operation = this.calculateService.getOperation();
     this.result = this.calculateService.getResult();
 
-    console.log('result', this.result);
 
     this.calculateService.operationSubject.subscribe((operation) => {
       this.operation = operation;

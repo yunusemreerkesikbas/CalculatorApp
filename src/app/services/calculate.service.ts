@@ -21,10 +21,8 @@ export class CalculateService {
   calculateResult(): void {
     try {
       this.result = eval(this.operation);
-      console.log(this.result);
       this.resultSubject.next(this.result);
       this.historyOperations.push(this.operation);
-      console.log(this.historyOperations);
       this.operation = this.result;
     } catch (error) {
       console.error('Hesaplama hatası:', error);
@@ -43,7 +41,6 @@ export class CalculateService {
 
   addToOperation(value: string): void {
     this.operation += value;
-    console.log('operation', this.operation);
     this.operationSubject.next(this.operation);
   }
 
