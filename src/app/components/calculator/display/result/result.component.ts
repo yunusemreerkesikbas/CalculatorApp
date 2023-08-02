@@ -8,7 +8,7 @@ import { CalculateService } from '@services/calculate.service';
   styleUrls: ['./result.component.scss'],
 })
 export class ResultComponent implements OnInit {
-  result: string;
+  result: string = '0';
   operation: string;
 
   constructor(protected calculateService: CalculateService) {}
