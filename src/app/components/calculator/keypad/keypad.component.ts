@@ -15,7 +15,9 @@ export class KeypadComponent implements OnInit {
   addToOperation(key: string) {
     this.calculateService.addToOperation(key);
   }
-
+  negateLastNumber(): void {
+    this.calculateService.negateLastNumber();
+  }
   calculateResult(): void {
     this.calculateService.calculateResult();
   }

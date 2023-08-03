@@ -12,17 +12,17 @@ export class CalculateService {
   operationSubject: Subject<string> = new Subject<string>();
   historyOperations: string[] = [];
   history: boolean = false;
-
+  private isInitialValue: boolean = true;
   constructor() {
     this.operation = '';
-    this.result = '0'; // Başlangıç değeri 0 olarak ayarlanmalı.
+    this.result = '0';
   }
 
 
   calculateResult(): void {
     try {
       if (this.operation === '') {
-        return; // İşlem boş ise hesaplama yapma.
+        return;
       }
 
       if (this.operation.includes('%')) {
@@ -35,12 +35,17 @@ export class CalculateService {
           throw new Error('Geçersiz mod işlemi');
         }
       } else {
-        this.result = eval(this.operation).toString();
+        const numericResult = eval(this.operation.replace('00', '0'));
+        if (isNaN(numericResult) || !isFinite(numericResult)) {
+          throw new Error('Geçersiz işlem');
+        }
+        this.result = numericResult.toString();
       }
 
       this.resultSubject.next(this.result);
       this.historyOperations.push(this.operation);
       this.operation = this.result;
+      this.isInitialValue = true;
     } catch (error) {
       console.error('Hesaplama hatası:', error);
       this.operation = '';
@@ -48,8 +53,6 @@ export class CalculateService {
       this.resultSubject.next('');
     }
   }
-
-
 
 
 
@@ -63,18 +66,49 @@ export class CalculateService {
   }
 
   addToOperation(value: string): void {
-    if (this.operation === '' && '+-*/%'.includes(value)){
-      return
+    if (this.isInitialValue && (value === '0' || value === '.' || value === '00')) {
+      return;
     }
-    if (this.operation === '' && '+-*/'.includes(value)) {
-      return; // Kullanıcı hala bir sayı girmeden operatör kullanamaz.
+    this.isInitialValue = false;
+    if (this.isInitialValue && "+-*/%".includes(value)) {
+      return;
     }
 
-    if (this.result !== '') {
-      this.result = ''; // Yeni bir işlem başladığında sonucu sıfırla.
+    if ("+-*/%".includes(this.operation[this.operation.length - 1]) && "+-*/".includes(value)) {
+      this.operation = this.operation.slice(0, -1) + value;
+      this.operationSubject.next(this.operation);
+      return;
     }
+    if (this.operation === '' && "+-*/%".includes(value)) {
+      return;
+    }
+    if ("+-*/".includes(this.operation[this.operation.length - 1]) && "+-*/".includes(value)) {
+      this.operation = this.operation.slice(0, -1) + value;
+      this.operationSubject.next(this.operation);
+      return;
+    }
+    if (this.result !== '') {
+      this.result = '';
+    }
+
     this.operation += value;
     this.operationSubject.next(this.operation);
+  }
+
+
+
+
+
+  negateLastNumber(): void {
+    const lastNumberRegex = /(-?\d+\.?\d*)$/;
+    const matches = this.operation.match(lastNumberRegex);
+
+    if (matches && matches.length > 0) {
+      const lastNumber = parseFloat(matches[0]);
+      const negatedNumber = -lastNumber;
+      this.operation = this.operation.replace(lastNumberRegex, negatedNumber.toString());
+      this.operationSubject.next(this.operation);
+    }
   }
 
   getOperation(): string {

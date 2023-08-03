@@ -1,29 +1,21 @@
 <app-history></app-history>
-<div class="operation-history flex justify-end font-normal opacity-50 ">
+
+<div class="operation-history flex justify-end font-normal opacity-50">
   <div class="operation text-gray-700 text-xl dark:text-white">
-    <ng-container *ngIf="calculateService.historyOperations.length > 0">
-      {{
-        calculateService.historyOperations[
-          calculateService.historyOperations.length - 1
-        ]
-      }}
+    <ng-container *ngIf="lastHistoryOperation">
+      {{ lastHistoryOperation }}
     </ng-container>
   </div>
 </div>
+
 <div class="result-component flex justify-between items-center font-normal">
   <div>
     <div class="equal-operation text-gray-700 text-2xl dark:text-white">=</div>
   </div>
-  <div
-    class="result text-gray-700 text-4xl dark:text-white"
-    *ngIf="result !== '' && operation === result"
-  >
+  <div class="result text-gray-700 text-4xl dark:text-white" *ngIf="result === operation">
     {{ result }}
   </div>
-  <div
-    class="result text-gray-700 text-4xl dark:text-white"
-    *ngIf="result === '' || operation !== result"
-  >
+  <div class="result text-gray-700 text-4xl dark:text-white" *ngIf="result !== operation">
     {{ operation }}
   </div>
 </div>
