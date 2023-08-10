@@ -13,12 +13,16 @@ export class CalculateService {
   historyOperations: string[] = [];
   history: boolean = false;
   private isInitialValue: boolean = true;
+  lastHistoryOperation: string = '';
   constructor() {
     this.operation = '';
     this.result = '0';
   }
 
-
+  private updateDisplay() {
+    this.operationSubject.next(this.operation);
+    this.resultSubject.next(this.result);
+  }
   calculateResult(): void {
     try {
       if (this.operation === '') {
@@ -59,10 +63,25 @@ export class CalculateService {
 
 
   clearDisplay(): void {
+    if (this.operation === '' && this.result === '0') {
+      return;
+    }
     this.operation = '';
-    this.result = '';
+    this.result = '0';
+    this.lastHistoryOperation = '';
+    this.updateDisplay();
     this.resultSubject.next('');
     this.operationSubject.next('');
+  }
+  getLastHistoryOperation(): string {
+    if (this.historyOperations.length > 0) {
+      return this.historyOperations[this.historyOperations.length - 1];
+    }
+    return '';
+  }
+
+  clearLastHistoryOperation(): void {
+    this.lastHistoryOperation = '';
   }
 
   addToOperation(value: string): void {

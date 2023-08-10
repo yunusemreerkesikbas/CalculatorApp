@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { CalculateService } from '@services/calculate.service';
+import {Component, OnInit} from '@angular/core';
+import {CalculateService} from '@services/calculate.service';
 
 @Component({
   selector: 'app-result',
@@ -11,23 +11,18 @@ export class ResultComponent implements OnInit {
   operation: string;
   lastHistoryOperation: string;
 
-  constructor(protected calculateService: CalculateService) {}
+  constructor(private calculateService: CalculateService) {
+  }
 
   ngOnInit(): void {
     this.calculateService.operationSubject.subscribe((operation) => {
       this.operation = operation;
+      this.updateLastHistoryOperation();
     });
 
     this.calculateService.resultSubject.subscribe((result) => {
       this.result = result;
       this.operation = this.result;
-    });
-
-    this.calculateService.operationSubject.subscribe((operation) => {
-      this.updateLastHistoryOperation();
-    });
-
-    this.calculateService.resultSubject.subscribe((result) => {
       this.updateLastHistoryOperation();
     });
 
@@ -37,13 +32,18 @@ export class ResultComponent implements OnInit {
   updateInitialValues(): void {
     this.operation = this.calculateService.getOperation();
     this.result = this.calculateService.getResult();
+
+    // Varsayılan değeri 0 olarak ayarla
+    if (this.result === '') {
+      this.result = '0';
+    }
+
     this.updateLastHistoryOperation();
   }
 
   updateLastHistoryOperation(): void {
-    const historyOperations = this.calculateService.getHistoryOperation();
-    if (historyOperations.length > 0) {
-      this.lastHistoryOperation = historyOperations[historyOperations.length - 1];
-    }
+    this.lastHistoryOperation = this.calculateService.getLastHistoryOperation();
   }
+
+
 }

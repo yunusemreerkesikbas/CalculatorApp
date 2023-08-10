@@ -15,7 +15,10 @@
   <div class="result text-gray-700 text-4xl dark:text-white" *ngIf="result === operation">
     {{ result }}
   </div>
-  <div class="result text-gray-700 text-4xl dark:text-white" *ngIf="result !== operation">
+  <div class="operation text-gray-700 text-4xl dark:text-white" *ngIf="result !== operation">
     {{ operation }}
+  </div>
+  <div class="operation text-gray-700 text-4xl dark:text-white" *ngIf="operation === ''">
+    0
   </div>
 </div>

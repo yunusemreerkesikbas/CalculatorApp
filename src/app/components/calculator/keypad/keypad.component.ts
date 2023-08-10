@@ -22,6 +22,7 @@ export class KeypadComponent implements OnInit {
     this.calculateService.calculateResult();
   }
   clearResult(): void {
+    this.calculateService.clearLastHistoryOperation();
     this.calculateService.clearDisplay();
   }
 }
